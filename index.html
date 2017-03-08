@@ -1,25 +1,42 @@
-<html>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-	<head>
- 		<title>Las Antipodas</title>
-		<style>
-			#map {
-				width:500px;
-				height: 400px;
-			}
- 		</style>
- 	</head>
-	<body>
-        	<p id='map'></p>
-  	        <script type="text/javascript" charset="utf-8">
-            function initMap(){
-                var mapDiv = document.getElementById("map");
-				var map = new google.maps.Map(mapDiv, {
-					center: {lat: 40.283743650362996, lng: -3.8191530513763428},
-					zoom: 15
-				});
- 			}
- 		</script>
-		<script src = "https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Las Antipodas</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script src="script.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6nnbwayjYFTtoc4baQIidCUg0OGN6J_o&callback=getLocation" async defer></script>
+</head>
+
+<body>
+	<h1>Las Antípodas</h1>
+	<header>
+		<p>
+			Seleccione en uno de los mapas un punto y obtendrá en el otro sus antípodas correspondientes. Si cambia el nivel de zoom en un mapa se cambiará en el otro automáticamente, de manera que pueda acercarse o alejarse del punto en ambos mapas a la vez.
+		</p>
+		<p>
+			Siempre que entre a la página (y dé permiso para utilizar su ubicación) encontrará en el mapa de la izquierda su ubicación actual y en el otro sus antípodas. Si la ventana del navegador no es lo suficientemente grande, primero se mostrará su ubicación
+			y después sus antípodas.
+		</p>
+	</header>
+	<p id="warning">
+		<strong>AVISO:</strong> Su navegador no soporta la geolocalización que ofrece HTML5. Para que pueda utilizar la aplicación de todas formas se está usando un polyfill que permite a su navegador usar geolocalización
+	</p>
+
+	<div class="map_block">
+		<h4>Su ubicación</h4>
+		<div id='map1' class="map">
+		</div>
+	</div>
+	<div class="map_block">
+		<h4>Sus antípodas</h4>
+		<div id='map2' class="map">
+		</div>
+	</div>
+</body>
+
 </html>
