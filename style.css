@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+}
+.map {
+    width: 600px;
+    height: 70vh;
+    display: inline-block;
+    margin: 0 20px;
+}
+.geolocation #warning {
+    display: none;
+}
+.no-geolocation #warning {
+    display: inherit;
+}
+h4 {
+    text-align: center;
+    margin: 5px 0;
+}
+.map_block {
+    float: left;
+}
